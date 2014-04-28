@@ -4,7 +4,9 @@ from bowling import Game
 class BowlingGameTest(unittest.TestCase):
 
   def testGutterGame(self):
-    g = Game()  
+    g = Game()
+    for i in range(20):
+      g.roll(0);  
 
 if __name__ == '__main__':
     unittest.main()
