@@ -7,14 +7,16 @@ class BowlingGameTest(unittest.TestCase):
     self.g = Game()
 
   def testGutterGame(self):
-    for i in range(20):
-      self.g.roll(0)
-    self.assertEqual(0, self.g.get_score())
+    self.__rollMany(0,0)
   
   def testAllOnes(self):
+    self.__rollMany(1,20)
+
+  def __rollMany(self, pins, expected_score):
     for i in range(20):
-      self.g.roll(1)
-    self.assertEqual(20, self.g.get_score())  
+      self.g.roll(pins)
+    self.assertEqual(expected_score, self.g.get_score()) 
+
 
 if __name__ == '__main__':
     unittest.main()
