@@ -3,5 +3,5 @@ class Game:
   def roll(self, pins):
     pass
 
-  def score():
-    pass
+  def score(self):
+    return 0
