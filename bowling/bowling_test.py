@@ -9,12 +9,12 @@ class BowlingGameTest(unittest.TestCase):
   def testGutterGame(self):
     for i in range(20):
       self.g.roll(0)
-    self.assertEqual(0, self.g.score())
+    self.assertEqual(0, self.g.get_score())
   
   def testAllOnes(self):
     for i in range(20):
       self.g.roll(1)
-    self.assertEqual(20, self.g.score())  
+    self.assertEqual(20, self.g.get_score())  
 
 if __name__ == '__main__':
     unittest.main()
