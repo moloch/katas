@@ -1,4 +1,5 @@
 import unittest
+from bowling import Game
 
 class BowlingGameTest(unittest.TestCase):
 
