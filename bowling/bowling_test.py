@@ -15,6 +15,11 @@ class FrameTest(unittest.TestCase):
     for i in range(10,100):
       self.assertEqual(False, self.f.add(i+1))
 
+  def testGetPointsForCurrentFrame(self):
+    self.f.add(8)
+    self.f.add(1)
+    self.assertEqual(9, self.f.get_points())
+
 class BowlingGameTest(unittest.TestCase):
 
   def setUp(self):
