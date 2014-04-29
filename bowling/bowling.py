@@ -1,3 +1,15 @@
+class Frame:
+
+  def __init__(self):
+    self.rolls = []
+
+  def add(self, pins):
+    if pins <= 10:
+      self.rolls.append(pins)
+      return True
+    else:
+      return False
+
 class Game:
 
   def __init__(self):
