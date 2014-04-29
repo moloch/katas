@@ -11,6 +11,9 @@ class FrameTest(unittest.TestCase):
     for i in range(10):
       self.assertEqual(True, self.f.add(i+1))
 
+  def testShouldNotAddPins(self):
+    for i in range(10,100):
+      self.assertEqual(False, self.f.add(i+1))
 
 class BowlingGameTest(unittest.TestCase):
 
