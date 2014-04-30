@@ -12,7 +12,7 @@ class FrameTest(unittest.TestCase):
       self.assertEqual(True, self.f.roll(1))
 
   def testShouldNotAddPins(self):
-      self.assertEqual(False, self.f.roll(11))
+    self.assertEqual(False, self.f.roll(11))
 
   def testGetPointsForCurrentFrame(self):
     self.f.roll(8)
@@ -24,6 +24,10 @@ class FrameTest(unittest.TestCase):
     self.f.roll(6)
     self.assertTrue(self.f.is_gutter())
 
+  def testIsStrike(self):
+    self.f.roll(10)
+    self.assertTrue(self.f.is_strike())
+  
 class BowlingGameTest(unittest.TestCase):
 
   def setUp(self):
