@@ -63,6 +63,12 @@ class BowlingGameTest(unittest.TestCase):
     self.g.roll(4)
     self.assertEqual(10+6+6, self.g.get_score())
 
+  def testShouldNotAddMoreThenTenFrames(self):
+    for i in range(10):
+      self.g.add_frame(Frame())
+    self.assertFalse(self.g.add_frame(Frame()))
+    self.assertEqual(10, len(self.g.frames))
+
   def __rollMany(self, pins, expected_score):
     for i in range(20):
       self.g.roll(pins)

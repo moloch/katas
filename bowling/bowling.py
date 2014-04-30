@@ -49,7 +49,11 @@ class Game:
     return score
 
   def add_frame(self, frame):
-    self.frames.append(frame)
+    if len(self.frames) < 10:
+      self.frames.append(frame)
+      return True
+    else:
+      return False
   
   def frames_to_list(self):
     l = []
