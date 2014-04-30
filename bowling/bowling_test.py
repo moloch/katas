@@ -39,6 +39,10 @@ class BowlingGameTest(unittest.TestCase):
   def testAllOnes(self):
     self.__rollMany(1,20)
 
+  def testAddFrame(self):
+    self.g.add_frame(Frame())
+    self.assertEquals(1, len(self.g.frames))
+
 #  def testSpare(self):
 #    self.g.roll(4)
 #    self.g.roll(6)
@@ -49,7 +53,6 @@ class BowlingGameTest(unittest.TestCase):
     for i in range(20):
       self.g.roll(pins)
     self.assertEqual(expected_score, self.g.get_score()) 
-
 
 if __name__ == '__main__':
     unittest.main()
