@@ -41,11 +41,11 @@ class Game:
     score = 0
     for i, frame in enumerate(self.frames):
       score += frame.get_points()
-      if i > 0:
-        if self.frames[i-1].is_strike():
-          score += frame.get_points()
-        elif self.frames[i-1].is_spare():
-          score += frame.rolls[0]
+      if i < len(self.frames)-1:
+        if frame.is_strike():
+          score += self.frames[i+1].get_points()
+        elif frame.is_spare():
+          score += self.frames[i+1].rolls[0]
     return score
 
   def add_frame(self, frame):
