@@ -71,6 +71,11 @@ class BowlingGameTest(unittest.TestCase):
     self.assertFalse(self.g.add_frame(Frame()))
     self.assertEqual(10, len(self.g.frames))
 
+  def testPerfectGame(self):
+    for i in range(12):
+      self.g.roll(10)
+    self.assertEqual(300, self.g.get_score())
+
   def __rollMany(self, pins, expected_score):
     for i in range(20):
       self.g.roll(pins)
