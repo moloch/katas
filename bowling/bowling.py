@@ -38,7 +38,7 @@ class Game:
     self.frames[-1].roll(pins) 
  
   def get_score(self):
-    for frame in self.frames:
+    for i, frame in enumerate(self.frames):
       self.score += frame.get_points()
     return self.score
 

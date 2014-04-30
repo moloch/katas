@@ -43,11 +43,11 @@ class BowlingGameTest(unittest.TestCase):
     self.g.add_frame(Frame())
     self.assertEquals(1, len(self.g.frames))
 
-#  def testSpare(self):
-#    self.g.roll(4)
-#    self.g.roll(6)
-#    self.g.roll(4)
-#    self.assertEqual(14+4, self.g.get_score())
+  def testSpare(self):
+    self.g.roll(4)
+    self.g.roll(6)
+    self.g.roll(4)
+    self.assertEqual(14+4, self.g.get_score())
 
   def __rollMany(self, pins, expected_score):
     for i in range(20):
