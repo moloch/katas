@@ -55,6 +55,12 @@ class BowlingGameTest(unittest.TestCase):
     self.g.roll(4)
     self.assertEqual(14+4, self.g.get_score())
 
+  def testStrike(self):
+    self.g.roll(10)
+    self.g.roll(2)
+    self.g.roll(4)
+    self.assertEqual(10+6+6, self.g.get_score())
+
   def __rollMany(self, pins, expected_score):
     for i in range(20):
       self.g.roll(pins)
