@@ -9,11 +9,10 @@ class FrameTest(unittest.TestCase):
 
   def testShouldAddPins(self):
     for i in range(10):
-      self.assertEqual(True, self.f.add(i+1))
+      self.assertEqual(True, self.f.add(1))
 
   def testShouldNotAddPins(self):
-    for i in range(10,100):
-      self.assertEqual(False, self.f.add(i+1))
+      self.assertEqual(False, self.f.add(11))
 
   def testGetPointsForCurrentFrame(self):
     self.f.add(8)

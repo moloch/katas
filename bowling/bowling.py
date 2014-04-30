@@ -4,7 +4,7 @@ class Frame:
     self.rolls = []
 
   def add(self, pins):
-    if pins <= 10:
+    if self.get_points() + pins <= 10:
       self.rolls.append(pins)
       return True
     else:
