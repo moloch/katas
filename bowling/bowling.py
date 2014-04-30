@@ -31,7 +31,7 @@ class Game:
     self.frames = []
 
   def roll(self, pins):
-    if len(self.frames) == 0 or len(self.frames[-1].get_rolls()) > 2 \
+    if len(self.frames) == 0 or len(self.frames[-1].get_rolls()) == 2 \
       or self.frames[-1].is_full():
       frame = Frame()
       self.add_frame(frame)
