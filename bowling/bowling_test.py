@@ -43,6 +43,12 @@ class BowlingGameTest(unittest.TestCase):
     self.g.add_frame(Frame())
     self.assertEquals(1, len(self.g.frames))
 
+  def testBuildFramesWhileRolling(self):
+    self.g.roll(10)
+    self.assertEqual([[10]], self.g.frames_to_list())
+    self.g.roll(2)
+    self.assertEqual([[10], [2]], self.g.frames_to_list())
+
   def testSpare(self):
     self.g.roll(4)
     self.g.roll(6)

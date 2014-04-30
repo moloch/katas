@@ -32,7 +32,8 @@ class Game:
     self.frames = []
 
   def roll(self, pins):
-    if len(self.frames) == 0 or len(self.frames[-1].get_rolls()) > 2:
+    if len(self.frames) == 0 or len(self.frames[-1].get_rolls()) > 2 \
+      or self.frames[-1].is_full():
       frame = Frame()
       self.add_frame(frame)
     self.frames[-1].roll(pins) 
@@ -44,4 +45,10 @@ class Game:
 
   def add_frame(self, frame):
     self.frames.append(frame)
-    
+  
+  def frames_to_list(self):
+    l = []
+    for f in self.frames:
+      l.append(f.rolls)
+    return l
+      
