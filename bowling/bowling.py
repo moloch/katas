@@ -3,7 +3,7 @@ class Frame:
   def __init__(self):
     self.rolls = []
 
-  def add(self, pins):
+  def roll(self, pins):
     if self.get_points() + pins <= 10:
       self.rolls.append(pins)
       return True

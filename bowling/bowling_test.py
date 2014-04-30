@@ -9,14 +9,14 @@ class FrameTest(unittest.TestCase):
 
   def testShouldAddPins(self):
     for i in range(10):
-      self.assertEqual(True, self.f.add(1))
+      self.assertEqual(True, self.f.roll(1))
 
   def testShouldNotAddPins(self):
-      self.assertEqual(False, self.f.add(11))
+      self.assertEqual(False, self.f.roll(11))
 
   def testGetPointsForCurrentFrame(self):
-    self.f.add(8)
-    self.f.add(1)
+    self.f.roll(8)
+    self.f.roll(1)
     self.assertEqual(9, self.f.get_points())
 
 class BowlingGameTest(unittest.TestCase):
