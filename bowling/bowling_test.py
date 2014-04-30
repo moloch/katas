@@ -48,6 +48,8 @@ class BowlingGameTest(unittest.TestCase):
     self.assertEqual([[10]], self.g.frames_to_list())
     self.g.roll(2)
     self.assertEqual([[10], [2]], self.g.frames_to_list())
+    self.g.roll(4)
+    self.assertEqual([[10], [2,4]], self.g.frames_to_list())
 
   def testSpare(self):
     self.g.roll(4)
