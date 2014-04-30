@@ -10,6 +10,9 @@ class Frame:
     else:
       return False
 
+  def get_points(self):
+    return sum(self.rolls)
+
 class Game:
 
   def __init__(self):
