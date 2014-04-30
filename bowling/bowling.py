@@ -41,6 +41,11 @@ class Game:
   def get_score(self):
     for i, frame in enumerate(self.frames):
       self.score += frame.get_points()
+      if i > 0:
+        if self.frames[i-1].is_strike():
+          self.score += frame.get_points()
+        elif self.frames[i-1].is_gutter():
+          self.score += frame.rolls[0]
     return self.score
 
   def add_frame(self, frame):
