@@ -13,6 +13,9 @@ class Frame:
   def get_points(self):
     return sum(self.rolls)
 
+  def is_gutter(self):
+    return sum(self.rolls) == 10 and len(self.rolls) == 2
+
 class Game:
 
   def __init__(self):
