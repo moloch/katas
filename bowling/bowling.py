@@ -16,7 +16,7 @@ class Frame:
   def get_points(self):
     return sum(self.rolls)
 
-  def is_gutter(self):
+  def is_spare(self):
     return self.is_full() and len(self.rolls) == 2
 
   def is_strike(self):
@@ -44,7 +44,7 @@ class Game:
       if i > 0:
         if self.frames[i-1].is_strike():
           score += frame.get_points()
-        elif self.frames[i-1].is_gutter():
+        elif self.frames[i-1].is_spare():
           score += frame.rolls[0]
     return score
 
