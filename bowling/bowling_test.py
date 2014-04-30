@@ -19,6 +19,11 @@ class FrameTest(unittest.TestCase):
     self.f.roll(1)
     self.assertEqual(9, self.f.get_points())
 
+  def testIsGutter(self):
+    self.f.roll(4)
+    self.f.roll(6)
+    self.assertTrue(self.f.is_gutter())
+
 class BowlingGameTest(unittest.TestCase):
 
   def setUp(self):
