@@ -44,6 +44,8 @@ class Game:
       if i < len(self.frames)-1:
         if frame.is_strike():
           score += self.frames[i+1].get_points()
+          if i < len(self.frames)-2 and self.frames[i+1].is_strike():
+            score += self.frames[i+2].rolls[0]
         elif frame.is_spare():
           score += self.frames[i+1].rolls[0]
     return score
