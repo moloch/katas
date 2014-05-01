@@ -36,7 +36,7 @@ class Game:
       frame = Frame()
       self.add_frame(frame)
     self.frames[-1].roll(pins) 
- 
+
   def get_score(self):
     score = 0
     for i, frame in enumerate(self.frames):
@@ -51,7 +51,8 @@ class Game:
     return score
 
   def add_frame(self, frame):
-    if len(self.frames) < 10:
+    if len(self.frames) < 10 or len(self.frames) == 10 and \
+      (self.frames[-1].is_strike() or self.frames[-1].is_spare()):
       self.frames.append(frame)
       return True
     else:
