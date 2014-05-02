@@ -21,5 +21,8 @@ class CalculatorTest(unittest.TestCase):
   def testShouldTreatNewlinesAsCommas(self):
     self.assertEqual(10, self.calculator.add("3,2\n1,1,1,1\n1"))
 
+  def testSemicolonAsCustomDelimiter(self):
+    self.assertEqual(10, self.calculator.add("//;\n3;2;1;1;1;1;1"))
+
 if __name__ == "__main__":
   unittest.main()
