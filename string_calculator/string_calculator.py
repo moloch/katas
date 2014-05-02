@@ -1,4 +1,7 @@
 class Calculator():
 
   def add(self, numbers):
-    return 0 
+    if numbers == "":
+      return 0
+    else:
+      return int(numbers) 
