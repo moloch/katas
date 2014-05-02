@@ -4,4 +4,4 @@ class Calculator():
     if numbers == "":
       return 0
     else:
-      return int(numbers) 
+      return sum(int(x) for x in numbers.split(",")) 
