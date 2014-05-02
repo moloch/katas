@@ -15,5 +15,8 @@ class CalculatorTest(unittest.TestCase):
   def testAddTwoNumbers(self):
     self.assertEqual(5, self.calculator.add("3,2"))
 
+  def testAddFiveNumbers(self):
+    self.assertEqual(10, self.calculator.add("3,2,1,1,1,1,1"))
+
 if __name__ == "__main__":
   unittest.main()
