@@ -4,4 +4,7 @@ class RomanNumber():
     self.value = value
 
   def get_roman_value(self):
-    return "I"
+    result = ""
+    for i in range(self.value):
+      result += "I"
+    return result 
