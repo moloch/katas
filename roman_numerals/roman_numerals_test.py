@@ -12,5 +12,8 @@ class RomanNumeralsTest(unittest.TestCase):
   def testConvertThreeFromDecimalToRoman(self):
     self.assertEqual("III", RomanNumber(3).get_roman_value())
 
+  def testConvertFourFromDecimalToRoman(self):
+    self.assertEqual("IV", RomanNumber(4).get_roman_value())
+
 if __name__ == '__main__':
   unittest.main()
