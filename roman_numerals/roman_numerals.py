@@ -11,8 +11,13 @@ class RomanNumber():
     current_value = self.value
     while len(self.numerals) > 0:
       numeral = self.numerals.pop()
-      print numeral[0], numeral[1]
+      consecutive_numerals = 0
       while numeral[0] <= current_value:
-        result += numeral[1]
-        current_value -= numeral[0] 
+        if consecutive_numerals < 3:
+          result += numeral[1]
+          consecutive_numerals += 1
+        else:
+          result = result.replace('III', 'IV')
+          consecutive_numerals = 0
+        current_value -= numeral[0]
     return result 
