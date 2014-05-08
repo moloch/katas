@@ -23,6 +23,9 @@ class RomanNumeralsTest(unittest.TestCase):
     self.__decimalToRoman("VII", 7)
     self.__decimalToRoman("VIII", 8)
 
+  def testConvertNineFromDecimalToRoman(self):
+    self.__decimalToRoman("IX", 9)
+
   def __decimalToRoman(self, roman, decimal):
     self.assertEqual(roman, RomanNumber(decimal).get_roman_value())
     
