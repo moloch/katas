@@ -4,8 +4,7 @@ class RomanNumber():
 
   def __init__(self, value):
     self.value = value
-    self.numerals = OrderedDict([(50,'L'),(10, 'X'),(5, 'V'),(1,'I')])
-    self.numbers = OrderedDict([(v,k) for k, v in self.numerals.items()])
+    self.numerals = OrderedDict([(50,'L'),(40,'XL'),(10, 'X'),(9,'IX'),(5, 'V'),(4,'IV'),(1,'I')])
 
   def get_roman_value(self):
     result = ""
@@ -16,7 +15,3 @@ class RomanNumber():
         result += roman_val
         current_value -= decimal_val
     return result
-
-  def get_prev_numeral(self, n):
-    numerals = self.numerals.values()
-    return numerals[numerals.index(n)-1] 
