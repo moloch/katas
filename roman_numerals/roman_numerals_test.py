@@ -78,6 +78,15 @@ class RomanNumeralsTest(unittest.TestCase):
     self.__decimalToRoman("L", 50)
     self.__decimalToRoman("LIV", 54)
     self.__decimalToRoman("LXXIX", 79)
+    self.__decimalToRoman("XCIX", 99)
+
+  def testConvertNumbersUntilOneThousand(self):
+    self.__decimalToRoman("C", 100)
+    self.__decimalToRoman("CCCXCIX", 399)
+    self.__decimalToRoman("CDXCIV", 494)
+    self.__decimalToRoman("DCLXXIX", 679)
+    self.__decimalToRoman("CMXCIX",999)
+    self.__decimalToRoman("M", 1000)
 
   def __decimalToRoman(self, roman, decimal):
     self.assertEqual(roman, RomanNumber(decimal).get_roman_value())
