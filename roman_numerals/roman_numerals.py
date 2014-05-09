@@ -12,7 +12,6 @@ class RomanNumber():
     current_value = self.value
     for decimal_val in self.numerals:
       consecutive_numerals = 0
-      numerals = self.numerals.values()
       roman_val = self.numerals[decimal_val]
       while decimal_val <= current_value:
         if consecutive_numerals < 3:
