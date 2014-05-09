@@ -50,6 +50,18 @@ class RomanNumeralsTest(unittest.TestCase):
     self.__decimalToRoman("XXVIII", 28)
     self.__decimalToRoman("XXIX",29)
 
+  def testConvertFromThirtyToThirtyNineFromDecimalToRoman(self):
+    self.__decimalToRoman("XXX", 30)
+    self.__decimalToRoman("XXXI", 31)
+    self.__decimalToRoman("XXXII", 32)
+    self.__decimalToRoman("XXXIII", 33)
+    self.__decimalToRoman("XXXIV", 34)
+    self.__decimalToRoman("XXXV", 35)
+    self.__decimalToRoman("XXXVI", 36)
+    self.__decimalToRoman("XXXVII", 37)
+    self.__decimalToRoman("XXXVIII", 38)
+    self.__decimalToRoman("XXXIX",39)
+  
   def __decimalToRoman(self, roman, decimal):
     self.assertEqual(roman, RomanNumber(decimal).get_roman_value())
     
