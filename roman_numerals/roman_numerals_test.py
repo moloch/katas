@@ -74,6 +74,11 @@ class RomanNumeralsTest(unittest.TestCase):
     self.__decimalToRoman("XLVIII", 48)
     self.__decimalToRoman("XLIX",49)
 
+  def testConvertNumbersBetweenFiftyAndNinetyNine(self):
+    self.__decimalToRoman("L", 50)
+    self.__decimalToRoman("LIV", 54)
+    self.__decimalToRoman("LXXIX", 79)
+
   def __decimalToRoman(self, roman, decimal):
     self.assertEqual(roman, RomanNumber(decimal).get_roman_value())
     
