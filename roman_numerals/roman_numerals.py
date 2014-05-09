@@ -4,7 +4,7 @@ class RomanNumber():
 
   def __init__(self, value):
     self.value = value
-    self.numerals = OrderedDict([(10, 'X'),(5, 'V'),(1,'I')])
+    self.numerals = OrderedDict([(50,'L'),(10, 'X'),(5, 'V'),(1,'I')])
     self.numbers = OrderedDict([(v,k) for k, v in self.numerals.items()])
 
   def get_roman_value(self):
@@ -19,7 +19,7 @@ class RomanNumber():
           consecutive_digits += 1
         else:
           previous = result[-4:]
-          if self.numbers[previous[0]] % 10 != 0:
+          if previous[0] in ['L','V','I']:
             actual = previous[1] + self.get_prev_numeral(previous[0])
           else:
             actual = previous[0] + previous[2] + self.get_prev_numeral(previous[1])
