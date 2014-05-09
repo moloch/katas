@@ -17,8 +17,7 @@ class RomanNumber():
           consecutive_numerals += 1
         else:
           previous = result[:-3] + numeral[1]*3
-          actual = numeral[1] + self.numerals.items()[i-1][1]
-          print previous, actual #Trovare l'elemento precedente al primo nel dict self.numerals
+          actual = previous[1] + self.numerals.values()[self.numerals.values().index(previous[0])-1]
           result = result.replace(previous, actual)
           consecutive_numerals = 0
         current_value -= numeral[0]
